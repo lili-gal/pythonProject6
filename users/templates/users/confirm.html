@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                            <p>Пожалуйста, подтвердите email, перейдя на почту</p>
+                            <a type="button" href="{% url 'mailing:mailings' %}" class="btn btn-primary">Вернуться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

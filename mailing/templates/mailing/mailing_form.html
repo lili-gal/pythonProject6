@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <label for="object">Тема письма:</label>
+                            <input class="form-control" type="text" id="object" name="object"><br>
+                            <label for="message">Тело письма:</label>
+                            <textarea class="form-control" rows="10" id="message" name="message"></textarea><br>
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

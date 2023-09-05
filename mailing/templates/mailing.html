@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                            Время отправки: {{ mailing.time }}<br><br>
+                            Периодичность: {{ mailing.interval }}<br><br>
+                            Статус: {{ mailing.status }}<br><br>
+                            Тема письма: {{ msg.message_object }}<br><br>
+                            Тело письма: {{ msg.message_body }}<br><br>
+                        {% if is_manager %}
+                        {% else %}
+                            <a type="button" href="{% url 'mailing:update_mailing' mailing.id %}" class="btn btn-primary">Редактировать</a>
+                            <a type="button" href="{% url 'mailing:delete_mailing' mailing.id %}" class="btn btn-danger">Удалить</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

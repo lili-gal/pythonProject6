@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+<ul class="list-group list-group-flush">
+<li class="list-group-item text-center"><div class="row fw-bold g-0"><div class="col">id</div><div class="col">email</div><div class="col">Статус блокировки</div></div></li>
+{% for u in usrs %}
+<li class="list-group-item text-center"><a href="users/ban/{{ u.id }}" class="row btn p-0 list-group-item-action d-flex g-0"><div class="col">{{u.id}}</div> <div class="col">{{u.email}}</div> <div class="col">{{u.is_blocked}}</div></a></li>
+{% endfor %}
+</ul>
+{% endblock %}
